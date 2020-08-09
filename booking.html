@@ -1,0 +1,457 @@
+<html>
+	<title>	Booking Form </title>
+	<head>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="booking.css">
+      <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <style>
+          body{
+            background-color: #0070ba;
+          }
+      .serv-detail{
+      width: 500px;
+      height: 350px;
+      background-color: white;
+      color: #0070ba;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      margin-top: 20px;
+      transition: 0.3s;
+      margin-left: 20px;
+      display:block; 
+    }
+    #serviceman_id{
+      display: none;
+    }
+    .serv-detail:hover{
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+    .checked{
+      color:#0070ba;
+    }
+    .serv-detail h1{
+      padding: 15px 10px 5px 20px;
+      margin: 0;
+    }
+    .serv-detail h3{
+      margin: 0;
+      padding-left: 20px;
+    }
+    .serv-detail p{
+      margin: 30px 5px 5px 20px;
+    }
+    .serv-detail img{
+       float: right;
+    }
+    .prof-img{
+      height: 80px;
+      width: 70px;
+      padding-top:15px;
+      display: block; 
+    }
+    .ratings{
+      padding-left: 290px;
+    }
+    .reviews h4{
+      font-size: 22px;
+      margin: 5px 0px 0px 0px;
+      border-radius: 3px;
+      padding-left:5px;
+      background-color: orange;
+    }
+    .reviews{
+      background-color: #ffdb4d;
+      color:black;
+      border-radius: 5px;
+      padding: 10px 7px;
+      margin: 10px;
+    }
+    .reviews p{
+      margin: 0;
+      margin-top: 0;
+      padding-top: 10px;
+      padding-right: 20px;
+    }
+    .reviews p:hover{
+      background-color: #e6b800;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .unchecked{
+      color:#a6a6a6;
+    }
+    #forms{
+      position: absolute;
+      top:0;
+      right: 0;
+      width: 50%; 
+      height: 500px;
+    }
+    #serv_head{
+      position:relative;
+      left:30px;
+      color: white;
+      font-family: 'Permanent Marker', sans-serif; 
+    }
+    #q{
+      width: 21%;
+      height: 39%; 
+      border:1px solid white;
+      box-shadow: 3px 3px 5px #0070ba;
+      overflow:;
+      padding:5px;
+      overflow:hidden;
+      font-weight: 200px;
+      display:none;
+      background-color: white;
+      color:#0070ba;
+      border-radius: 10px;
+      padding-right: 40px;
+  }
+    #q div:hover{
+      background-color: #0070ba;
+      color: white;
+      cursor: pointer;
+    }
+      #q span{
+         float:right;
+       }
+        .dropdown li:hover > .dropdown-menu{
+        display: block;
+        color: white;
+        text-decoration: none;
+        }
+        .dropdown-submenu {
+        position: relative;
+      }
+      .dropdown-submenu .dropdown-menu {
+        margin-top: -1px;
+      }
+      .dropdown-menu .buttn{
+          position: absolute;
+          top:200px;
+          left:48%;
+        }
+        #sas{
+          position:relative;
+          top:110px;
+          color:white;
+          font-family: 'Permanent Marker', sans-serif;
+          font-size: 42px;
+        }
+  </style>
+	</head>
+	<body onload="selBook()">
+        <div class="dropdown">
+          <h1 align="center" id="sas">SELECT A SERVICE</h1>
+            <button class="btn btn-default dropdown-toggle buttn" id="butt" type="button" data-toggle="dropdown" style="position: absolute; top:175px; left:35%;   display: block;
+  width: 30%;
+  padding: 0 16px;
+  height: 44px;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: 'Permanent Marker',sans-serif;
+  font-size: 24px;
+  border: 2px solid white;
+  background:none;
+  color:white;
+  overflow: hidden;
+  font-weight: 6px;">Services
+      <span class="caret"></span></button>
+    	<ul class="dropdown-menu" style="position: absolute; top:215px; left:35%; width: 30%;
+  font-family: 'Permanent Marker',sans-serif; color:black; font-size: 22px;">
+        <li class="dropdown-submenu">
+        <a class="test" href="#">House-hold<span class="caret"></span></a>
+        <ul class="dropdown-menu" style="position: absolute; top:10px; left:170px;">
+          <li><a href="#" onclick="openBooking('Appliances Repair')">Appliances Repair</a></li>
+          <li><a href="#" onclick="openBooking('Cleaning Services')">Cleaning Services</a></li>
+          <li><a href="#" onclick="openBooking('Renovation & Repair')">Renovation & Repair</a></li>
+          <li><a href="#" onclick="openBooking('Food & Groceries')">Food & Groceries</a></li>
+        </ul>
+      </li>
+      <li class="dropdown-submenu">
+        <a class="test" href="#">Beauty & Salon<span class="caret"></span></a>
+        <ul class="dropdown-menu" style="position: absolute; top:10px; left:200px;">
+          <li><a href="#" onclick="openBooking('Massage & Spa')">Massage & Spa</a></li>
+          <li><a href="#" onclick="openBooking('Hair & Makeup')">Hair & Makeup</a></li>
+          <li><a href="#" onclick="openBooking('Beauty Treatments')">Beauty Treatments</a></li>
+        </ul>
+      </li>
+      <li class="dropdown-submenu">
+        <a class="test" href="#">Education<span class="caret"></span></a>
+        <ul class="dropdown-menu" style="position: absolute; top:10px; left:150px;">
+          <li><a href="#" onclick="openBooking('Home Tutor')">Home Tutor</a></li>
+          <li><a href="#" onclick="openBooking('Counselling')">Counselling</a></li>
+          <li><a href="#" onclick="openBooking('Coaching Classes')">Coaching Classes</a></li>
+        </ul>
+      </li>
+      <li class="dropdown-submenu">
+        <a class="test" href="#">Artists<span class="caret"></span></a>
+        <ul class="dropdown-menu" style="position: absolute; top:10px; left:120px;">
+          <li><a href="#" onclick="openBooking('DJ')">DJ</a></li>
+          <li><a href="#" onclick="openBooking('Photographer')">Photographer</a></li>
+          <li><a href="#" onclick="openBooking('Dancer')">Dancer</a></li>
+          <li><a href="#" onclick="openBooking('Writer')">Writer</a></li>
+        </ul>
+      </li>
+      <li class="dropdown-submenu">
+        <a class="test" href="#">Wedding & Events<span class="caret"></span></a>
+        <ul class="dropdown-menu" style="position: absolute; top:10px; left:220px;">
+          <li><a href="#" onclick="openBooking('Event Manager')">Event Manager</a></li>
+          <li><a href="#" onclick="openBooking('Wedding Planner')">Wedding Planner</a></li>
+          <li><a href="#" onclick="openBooking('Designer Clothing')">Designer Clothing</a></li>
+        </ul>
+      </li>
+      <li class="dropdown-submenu">
+        <a class="test" href="#">Corporate<span class="caret"></span></a>
+        <ul class="dropdown-menu" style="position: absolute; top:10px; left:150px;">
+          <li><a href="#" onclick="openBooking('Legal Consultant')">Legal Consultant</a></li>
+          <li><a href="#" onclick="openBooking('Chartered Accountant')">Chartered Accountant</a></li>
+          <li><a href="#" onclick="openBooking('Business Marketing')">Business Marketing</a></li>
+        </ul>
+      </li>
+      <li class="dropdown-submenu">
+        <a class="test" href="#">Health & Care<span class="caret"></span></a>
+        <ul class="dropdown-menu" style="position: absolute; top:10px; left:190px;">
+          <li><a href="#" onclick="openBooking('Doctor')">Doctor</a></li>
+          <li><a href="#" onclick="openBooking('Pharmacist')">Pharmacist</a></li>
+          <li><a href="#" onclick="openBooking('Nurse')">Nurse</a></li>
+        </ul>
+      </li>
+      <li class="dropdown-submenu">
+        <a class="test" href="#">Travel<span class="caret"></span></a>
+        <ul class="dropdown-menu" style="position: absolute; top:10px; left:110px;">
+          <li><a href="#" onclick="openBooking('Hotel Booking')">Hotel Booking</a></li>
+          <li><a href="#" onclick="openBooking('Vehicle Booking')">Vehicle Booking</a></li>
+          <li><a href="#" onclick="openBooking('Guide')">Guide</a></li>
+          <li><a href="#" onclick="openBooking('Driver')">Driver</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<div id="booking_form"> 
+<form style="margin-bottom:0;">
+	<h1>BOOK YOUR SERVICE</h1>
+	<input type="text" placeholder="Description of the Service you want"><br>
+	<input type="text" name="time" placeholder="Preferred Time-Slot"><br>
+	<input type="text" name="place" placeholder="Location where you want the service to happen"><br>
+</form>
+</div>
+<center><div id="serviceman_id">
+<h1 style="color: white;">SELECT A SERVICEMAN</h1>
+<div class="serv-detail" onclick="servSelect(0)"> 
+        <img src="avatar2.PNG">
+        <h1 id="mm">Manish Mukherjee</h1>
+        <h3>Electrician</h3>
+    <p>Experienced electrician with high rating<br> and passion for electricals</p>
+    <div class="ratings">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span></div>
+    <div class="reviews">
+      <h4>Reviews</h4>
+      <p>
+        Very quick repair and very polite person.
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star unchecked"></span>
+      </p>
+      <p>Nice person with good knowledge.
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+      </p>
+    </div>
+  </div>
+  <div class="serv-detail" onclick="servSelect(1)" >
+        <img src="avatar1.PNG">
+    <h1 id="rk">Ramesh Kumar</h1>
+    <h3>Electrician</h3>
+    <p>A skilled trainer with more than 5 years<br> of experience in electric repair</p>
+    <div class="ratings">
+        <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star unchecked"></span></div>
+    <div class="reviews">
+      <h4>Reviews</h4>
+      <p>
+        Nice and excellent service. Work done in no time.
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star unchecked"></span>
+      </p>
+      <p> Expensive but nice service provided.
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star unchecked"></span>
+        <span class="fa fa-star unchecked"></span>
+      </p>
+    </div>
+  </div>
+  <div class="serv-detail" onclick="servSelect(2)">
+        <img src="avatar3.PNG">
+    <h1 id="ra">Raju Awasthi</h1>
+    <h3>Electrician</h3>
+    <p>Expert technician in electric field<br>book me with this website.</p>
+    <div class="ratings">
+        <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star unchecked"></span>
+    <span class="fa fa-star unchecked"></span></div>
+    <div class="reviews">
+      <h4>Reviews</h4>      
+      <p>
+        Work done is not good. Should improve.
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star unchecked"></span>
+        <span class="fa fa-star unchecked"></span>
+        <span class="fa fa-star unchecked"></span>
+      </p>
+      <p> Work was clean and fast.
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star unchecked"></span>
+      </p>
+    </div>
+  </div>
+</div></center>
+<center><div id="q" style="margin-top: 200px;">
+<center><h3>Cleaning Services<br></center></h3><hr>
+<div onclick="priceselect(0,0)">Carpet Cleaning <span>Rs.750</span><br></div>
+<div onclick="priceselect(1,1)">Deep Cleaning <span>Rs.1550</span><br></div>
+<div onclick="priceselect(2,2)">Vaccum Cleaning <span>Rs.600</span><br></div>
+<div onclick="priceselect(3,3)">Window Cleaning <span>Rs.450</span><br></div>
+</div></center>
+<script>
+	function openBooking(txt) {
+        var serv= document.createElement("INPUT");
+        serv.setAttribute("type","text");
+        serv.setAttribute("value",txt);
+        localStorage.setItem('services',txt);
+            var btn3=document.createElement("button");
+            btn3.innerHTML="PROCEED";
+            booking_form.innerHTML+="";
+            serv.style.marginTop="0px";
+            booking_form.appendChild(serv);
+            btn3.setAttribute("id","ss_btn");
+            btn3.setAttribute("onclick","openServiceman()");
+            btn3.style.backgroundColor="#0070ba";
+            btn3.style.color="white";
+            btn3.style.border="none";
+            btn3.style.borderRadius="25px";
+            btn3.style.padding="10px";
+            btn3.style.width="100px";
+            booking_form.innerHTML+="<br>";
+            booking_form.appendChild(btn3);
+            booking_form.style.display = "block";
+            sas.style.display="none";
+            book_btn.style.display="none";
+      }
+      function openServiceman()
+        {
+          serviceman_id.style.display="block";
+          booking_form.style.display = "none";
+          q.style.display="none";
+          butt.style.display="none"; 
+        }
+       function servSelect(num){
+          var text=['Manish Mukherjee','Rakesh Kumar','Raju Awasthi'];
+            var name=document.createElement("Input");
+            name.setAttribute("type","text");
+            name.setAttribute("value",text[num]);
+            name.setAttribute("id","serviceman");
+            booking_form.innerHTML+="";
+            localStorage.setItem("book",text[num]);
+            var bool=document.getElementById("serviceman");
+            if(!bool){
+              document.getElementById("booking_form").appendChild(name);
+            }
+            serviceman_id.style.display="none";
+            booking_form.style.display = "block";
+            var btnbtn=document.createElement("button");
+            btnbtn.innerHTML="PROCEED";
+            btnbtn.setAttribute("id","pro_btn");
+            btnbtn.setAttribute("onclick","prices()");
+            booking_form.innerHTML+="<br>";
+            btnbtn.style.backgroundColor="#0070ba";
+            btnbtn.style.color="white";
+            btnbtn.style.border="none";
+            btnbtn.style.borderRadius="25px";
+            btnbtn.style.padding="10px";
+            btnbtn.style.width="100px";
+            booking_form.appendChild(btnbtn);
+            ss_btn.style.display="none";
+        }
+        function prices()
+        {
+          serviceman_id.style.display="none";
+          booking_form.style.display = "none";
+          q.style.display="block"; 
+          butt.style.display="none"; 
+        }
+        function priceselect(a,b){
+          var price=[750,1550,600,450];
+          var type1=["Carpet Cleaning","Deep Cleaning","Vaccum Cleaning","Window Cleaning"];
+          var inp=document.createElement("Input");
+          inp.setAttribute("type","text");
+          inp.setAttribute("value","Rs."+price[b]);
+          var imp=document.createElement("Input");
+          imp.setAttribute("type","text");
+          imp.setAttribute("value",type1[a]);
+          var booking_form=document.getElementById("booking_form");
+          booking_form.appendChild(imp);
+          booking_form.innerHTML+="<br>";
+          booking_form.appendChild(inp);
+          booking_form.innerHTML+="<br>";
+          q.style.display="none";
+          pro_btn.style.display="none";
+          var btn2=document.createElement("button");
+          btn2.innerHTML="PROCEED";
+          booking_form.innerHTML+="";
+          btn2.setAttribute("id","pay_btn");
+          btn2.setAttribute("onclick","payment()");
+          var paym;
+          localStorage.setItem("paym",price[b]);
+            btn2.style.backgroundColor="#0070ba";
+            btn2.style.color="white";
+            btn2.style.border="none";
+            btn2.style.borderRadius="25px";
+            btn2.style.padding="10px";
+            btn2.style.width="100px";
+          booking_form.appendChild(btn2);
+          booking_form.style.display = "block";
+        }
+        function payment(){
+          location.replace("paymwnt.html");
+        }
+        function selBook(){
+          var txtserv=localStorage.getItem('services');
+          if(txtserv!=null){
+            openBooking(txtserv);
+          }
+        }
+
+</script> 
+	</body>
+</html>

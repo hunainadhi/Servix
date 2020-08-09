@@ -1,0 +1,667 @@
+<html>
+    <link rel="stylesheet" href="style.css">
+  
+	<style>
+        *{
+            margin: 0;
+        }
+		#outerdiv {
+			margin: 0;
+			font-family: DharmaGothicE-RegularItalic,Helvetica Neue,Arial,sans-serif;
+            margin-bottom: 100px;
+		}
+		.navbar{
+			height:65px;
+			width: 100%;
+			position: fixed;
+			top:0;
+			background-color: rgba(0,112,186,1);
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
+            z-index: 2;
+		}
+     
+	.navbar ul{
+		position: fixed;
+		top:0;
+		left: 0;
+		width: 100%;
+		z-index: 0;
+		font-size: 20px;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+	.navbar nav li{
+		float: right;
+		display: inline;
+		background-color: #0070ba;
+		border-radius: 100px;
+		margin-top: 10px;
+        margin-left:20px;
+		border:solid 1px white;
+	}
+        .navbar nav li button{
+		float: right;
+		display: inline;
+		background-color:white;
+		border-radius: 100px;
+        color:#0070ba; 
+		border:solid 0.5px white;
+	}
+	.navbar li a{
+		display: block;
+		padding: 10px;
+		color: white;
+		text-decoration: none;
+		font-size: 16px;
+		width: 65px;
+		text-align: center;
+	}
+        .navbar li button{
+		display: block;
+		padding: 10px;
+		color: white;
+		text-decoration: none;
+		font-size: 16px;
+		width: 65px;
+		text-align: center;
+	}
+        .navbar li a: active{
+            background-color: #0070ba;
+            color: white;
+        }
+	nav li:hover{
+		cursor: pointer;
+	}
+	#drop{
+		width: 15px;
+		margin-left: 500px;
+	}
+	#icon{
+		font-size: 50px;
+		color: white;
+		margin: 0;
+		padding-left: 10px;
+	}
+	#uvp{
+		position: static;
+		margin-top: 100px;
+		margin-left: 100px;
+		font-size: 50px;
+		margin-bottom: 0;
+
+	}
+	#paralist, ol{
+		color:black;
+		position: static; 
+		margin-left: 100px;
+		font-size: 18px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	#leftdiv{
+		width:50%;
+		position: absolute;
+		left: 0;
+		top:10px;
+	}
+	#uvp,#paralist, ol{
+		color:white;
+	}
+	#rightdiv{
+		position: absolute;
+		right: 0;
+		top:10px;
+		width: 50%;
+	}
+	#outerdiv button{
+        margin-top: 50px;
+		margin-left: 150px;
+		border-radius: 100px;
+		width:250px;
+		border:none;
+		height: 50px;
+		background-color: #0070ba;
+        text-decoration: none;
+		display: block;
+	}
+        button: focus{
+            outline: 0;
+            border:1px solid white;
+        }
+	#outerdiv a button{
+		text-decoration: none;
+		color:white;
+		font-size: 17px;
+	}
+	#bgimg{
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+	}
+	#serv{	
+		position: relative;
+		margin-right: 400px;
+		background-color: #fff;
+		padding: 0px 50px 0px 30px;     
+	}
+	#serv a{
+		color: rgb(0, 112, 186);
+        font-size:24px;
+	}
+	#login{
+		background-color: white;
+		border: solid 3px #006bb3; 
+	}
+	#login a{
+		color:#006bb3;
+	}
+        
+        #signu {
+          display:none;
+          width: 300px;
+          padding: 20px;
+          text-align: center;
+          background:white;
+          position: fixed;
+          float: right;
+          transform: translate(295%,-200%);
+          overflow: hidden;
+          box-shadow: 1px 2px 3px 1px black;
+          z-index: 20;
+        }
+        #signu h1{
+          margin-top: 20px;
+          font-family: 'Permanent Marker', cursive;
+          color: #0070ba;
+          font-size: 40px;
+          text-shadow: 2px 2px black;
+        }
+        #signu button{
+             width: 200px;
+            height: 45px;
+              background-color: #0070ba;
+              border-radius:30px;
+              display:block;
+                color: white;
+            display: block;
+            }   
+	</style>
+	<style>
+        .flip-card{
+            width:23%;
+            height:300px;
+            margin:10px;
+            
+        }
+        #card1 .flip-card-front{
+            background-image: url(1.jpeg);
+        }
+        #card2 .flip-card-front{
+            background-image: url(2.jpg)
+        }
+        #card3 .flip-card-front{
+            background-image: url(3.jpg)
+        }
+        #card4 .flip-card-front{
+            background-image: url(4.jpg)
+        }
+        #card5 .flip-card-front{
+            background-image: url(5.jpg)
+        }
+        #card6 .flip-card-front{
+            background-image: url(6.jpg)
+        }
+        #card7 .flip-card-front{
+            background-image: url(7.jpg)
+        }
+        #card8 .flip-card-front{
+            background-image: url(8.jpg)
+        } 
+        #serv-sec{
+            width:100%;
+            padding:0;
+            margin:0;
+            display: inline-block;
+        }
+        h1{
+        
+            margin-top: 125px;
+            -webkit-text-stroke: 1px ;
+            /*text-shadow: 3.5px 3.5px 5px grey;*/
+            
+        }
+        .flip-card-back li a{
+            text-decoration: none;
+            color:white;
+            font-weight: 1000;
+        }
+        li a:hover{
+            color:black;
+            cursor: pointer;
+        }
+      
+        .flip-card-back ul{
+            margin-top: 8px;
+            display: inherit;
+            list-style: none;
+            padding: 60px 35px;
+        }
+        .flip-card-back ul li{
+            margin-bottom: 15px;
+        }
+
+        .flip-card {
+          background-color: transparent;
+          width: 23.5%;
+          height: 300px;
+          float: left;
+        perspective: 1000px;
+        }
+
+        .flip-card-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          transition: transform 0.6s;
+          transform-style: preserve-3d;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        .flip-card:hover .flip-card-inner {
+          transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          background-size:cover;
+        }
+
+        .flip-card-front {
+            
+          background-color: white;
+          color: black;
+          z-index: 2;
+        }
+
+        .flip-card-back {
+          background-color: #0070ba;
+          color: white;
+            font-size: 20;
+          transform: rotateY(180deg);
+          z-index: 1;
+        }
+        #card1,#card2,#card3,#card4,#card5,#card6,#card7,#card8{
+            position:static;
+            
+        }
+        #flip-gallery{
+            width: 100%;
+            float:left;
+            overflow: hidden;
+            margin-bottom: 80px;
+            
+        }
+        
+    </style>
+      <style>
+		.sub-cards{
+			height: 200px;
+			width:25%;
+			margin-right:30px;
+			background-color: #0070ba;
+			color: white;
+			border-radius: 5px;
+			float: left;
+			margin-left:auto; 
+			box-shadow: 1px 4px 8px 0 rgba(0,0,0,0.8);
+		}
+		.sub-btn, #train-div button{
+			margin-top:10px;
+			background-color: white;
+			border-radius: 25px;
+			width:140px;
+			height:30px;
+			border:none;
+			display: block;
+			margin-left:auto;
+			margin-right:auto;
+		}
+		#sub-div{
+			margin-left: 170px;
+      width:87%;
+			height: 200px;
+            padding-bottom: 80px;
+            padding-top: 50px;
+		}
+          #signu button a{
+              text-decoration: none;
+              color: white;
+          }
+		.sub-btn a, #train-div a{
+			color:#0070ba;
+			text-decoration: none;
+		}
+		.sub-cards p{
+			font-size:20px;
+			text-align: center;
+			margin:5;
+		}
+		.sub-cards h1,#train-div h1{
+			+font-size:44px;
+			text-align: center;
+			margin: 30px 0px 0px 0px;
+		}
+		.sub-cards h3, #train-div h3{
+			margin: 0px;
+			font-size: 20px;
+			text-align: center;
+		}
+          #train-div{
+              width:60%;
+              height:180px;
+              margin-left: 265px;
+              background-color: #0070ba;
+              color:white;
+              border-radius: 10px;
+              box-shadow: 1px 4px 8px 0 rgba(0,0,0,0.8);
+              position: relative;
+          }
+          #foot{
+            height:65px;
+            width: 100%;
+            position: relative;
+            background-color: rgba(0,112,186,1);
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
+            z-index: 2;
+          }
+          #foot ul{
+    position: relative;
+    
+    width: 100%;
+    z-index: 0;
+    font-size: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  #foot li{
+    float: left;
+    display: inline;
+    background-color: #0070ba;
+   padding-left: 150px;    margin-top: 10px;
+        margin-left:20px;
+   
+  }
+  #foot li a{
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    width: 65px;
+    text-align: center;
+  }
+	</style>
+<body onload="loggedin()">
+		<img id="bgimg" src="bgimg3.jpg" >
+		<header class="navbar">
+			<img src="xervizz_logo.png">
+		<nav>
+			<ul>
+				<li id="signin"><a onclick="openSU()" >Sign up</a></li>
+				<li id="login" ><a onclick="openLogin()">Log in</a></li>
+				<li id="serv" onclick="booker()"><a>Services</a></li>
+			</ul>	
+		</nav>
+		</header>
+<hr>
+        <div id="forms">
+          <form method="post" action="xervizz_home_loggedin.html">
+            <h1>LOGIN</h1>
+            <input type="text" placeholder="Username" class="box">
+            <input type="password" placeholder="Password" class="box">
+            <input type="submit" value="LOGIN" class="submit-btn">
+            <a onclick="openSU()">Dont Have one?</a>
+          </form>
+        </div>
+    <div id="signu">
+            <h1>SIGN UP</h1>
+            <h4>as</h4><br>
+        <center> <a href="signupS.html"> <button type="submit" value="Service Provider">Service provider</button></a><br>
+            <a href="signupU.html"><button type="submit" value="User" >User</button></a>
+               </center>
+    </div>
+    <div id="outerdiv" onclick="closer()">
+	<div id="leftdiv">
+	<p id="uvp"><i><b>Reliable.<br>Hassle-Free.<br>Cheapest Market Rates.</b></i></p>
+	<p id="paralist"> Book any service in only 3 easy steps.
+		<ol>
+			<li>Fill a quick form.</li>
+			<li>Book any service starting at only Rs. 250.</li>
+			<li>Get 24x7 doorstep services within 1 day.</li></ol>
+	<a href="signupU.html"><button>Get Started</button></a>
+	</div>
+	<div id="rightdiv">
+		<p id="uvp"><i><b>Earn Lucratively<br>At Your<br>Own Convenience.</b></i></p>
+		<p id="paralist"> Start earning in only 3 easy steps.
+		<ol>
+			<li>Fill a quick form.</li>
+			<li>Prove your skills or Train with us.</li>
+			<li>Start earning up to Rs. 30000/mo.</li></ol>
+		<a href="signupS.html"><button>Get Started</button></a>
+	</div>
+    </div>
+	<div id="flip-gallery" onclick="closer()">
+    <h1 align="center" style="margin: 0; color: #0070ba; font-size: 52px; ">Our Services</h1>
+        <div class="flip-card" id="card1">
+            <div  class="flip-card-inner" >
+                <div class="flip-card-front" >
+                  <h1>House-Hold</h1>
+                </div>
+                <div class="flip-card-back">
+                        <ul>
+                            <li><a onclick ="cardOpen('Appliances Repair')">Appliances Repair</a></li>
+                            <li><a onclick ="cardOpen('Cleaning Services')">Cleaning Services</a></li>
+                            <li><a onclick ="cardOpen('Renovation & Repairs')">Renovation & Repairs</a></li>
+                            <li><a onclick ="cardOpen('Food & Groceries')">Food & Groceries</a></li>
+                            <li><a onclick ="cardOpen('...and more')">... and more</a></li>     
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card" id="card2">
+            <div  class="flip-card-inner" >
+                <div class="flip-card-front">
+                    <h1>Beauty &<br>Salon</h1>
+                </div>
+                <div class="flip-card-back">
+                    <ul>
+                            <li><a onclick ="cardOpen('Massage & Spa')">Massage & Spa</a></li>
+                            <li><a onclick ="cardOpen('Hair & Makeup')">Hair & Makeup</a></li>
+                            <li><a onclick ="cardOpen('Beauty Treatments')">Beauty Treatments</a></li>
+                            <li><a onclick ="cardOpen('...and more')">... and more</a></li>
+                    </ul>
+                </div>
+            </div>  
+        </div>
+        <div class="flip-card" id="card3">
+            <div  class="flip-card-inner" >
+                <div class="flip-card-front">
+                    <h1>Education</h1>
+                </div>
+                <div class="flip-card-back">
+                <ul>
+                           
+                            <li><a onclick="cardOpen('Home Tutor')">Home Tutor</a></li>
+                            <li><a onclick="cardOpen('Counselling')">Counselling</a></li>
+                            <li><a onclick="cardOpen('Coaching Classes')">Coaching Classes</a></li>
+                            <li><a onclick="cardOpen('Study Material')">Study Material</a></li>
+                            <li><a onclick="cardOpen('... and more')">... and more</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card" id="card4">
+            <div  class="flip-card-inner" >
+                <div class="flip-card-front">
+                    <h1>Artists</h1>
+                </div>
+                <div class="flip-card-back">
+                    <ul>
+                             <li><a onclick ="cardOpen('DJ')">DJ</a></li>
+                            <li><a onclick ="cardOpen('Photographer')">Photographer</a></li>
+                            <li><a onclick ="cardOpen('Dancer')">Dancer</a></li>
+                            <li><a onclick ="cardOpen('Writer')">Writer</a></li>
+                            <li><a onclick ="cardOpen('...and more')">...and more</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card" id="card5">
+            <div  class="flip-card-inner" >
+                <div class="flip-card-front">
+                    <h1>Wedding &<br>Events</h1>
+                </div>
+                <div class="flip-card-back">
+                    <ul>
+                            <li><a onclick ="cardOpen('Event Manager')">Event Manager</a></li>
+                            <li><a onclick ="cardOpen('Wedding Planner')">Wedding Planner</a></li>
+                            <li><a onclick ="cardOpen('Designer Clothing')">Designer Clothing</a></li>
+                            <li><a onclick ="cardOpen('...and more')">...and more</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card" id="card6">
+            <div  class="flip-card-inner" >
+                <div class="flip-card-front">
+                    <h1>Corporate</h1>
+                </div>
+                <div class="flip-card-back">
+                    <ul>
+                              <li><a onclick ="cardOpen('Legal Consultant')">Legal Consultant</a></li>
+                            <li><a onclick ="cardOpen('Chartered Accountant')">Chartered Accountant</a></li>
+                            <li><a onclick ="cardOpen('Business Marketing')">Business Marketing</a></li>
+                            <li><a onclick ="cardOpen('... and more')">... and more</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card" id="card7">
+            <div  class="flip-card-inner" >
+                <div class="flip-card-front">
+                    <h1>Health &<br> Care</h1>
+                </div>
+                <div class="flip-card-back">
+                    <ul><li><a onclick ="cardOpen('Doctor')">Doctor</a></li>
+                            <li><a onclick ="cardOpen('Pharmacist')">Pharmacist</a></li>
+                            <li><a onclick ="cardOpen('Home Nurse')">Home Nurse</a></li>
+                            <li><a onclick ="cardOpen('... and more')">... and more</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card" id="card8">
+            <div  class="flip-card-inner" >
+                <div class="flip-card-front">
+                    <h1>Travel</h1>
+                </div>
+                <div class="flip-card-back">
+                    <ul>
+                           <li><a onclick ="cardOpen('Hotel Booking')">Hotel Booking</a></li>
+                            <li><a onclick ="cardOpen('Vehicle Booking')">Vehicle Booking</a></li>
+                            <li><a onclick ="cardOpen('Guide')">Guide</a></li>
+                            <li><a onclick ="cardOpen('Driver')">Driver</a></li>
+                            <li><a onclick ="cardOpen('... and more')">... and more</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+            <h1 align="center" style="margin: 0; color: #0070ba; font-size: 52px; ">Subscription Packs</h1>
+    <div id="sub-div" onclick="closer()">
+	<div class="sub-cards">
+    <h1>999/mo *</h1>
+    <h3>includes 5 services</h3>
+    <button class="sub-btn" onclick="payment(999,1)">Subscribe now</button>
+    <p>*limit: 5 services/mo</p>
+  </div>
+  <div class="sub-cards">
+    <h1>4499/6mo *</h1>
+    <h3>includes 18 services</h3>
+    <button class="sub-btn" onclick="payment(4499,6)">Subscribe now</button>
+    <p>*limit: 3 services/mo</p>
+  </div>
+  <div class="sub-cards">
+    <h1>8999/yr *</h1>
+    <h3>includes 36 services</h3>
+    <button class="sub-btn" onclick="payment(8999,12)">Subscribe now</button>
+    <p>*limit: 3 services/mo</p>
+  </div>
+	</div>
+
+    <div id="train-div">
+    <h1>Want to earn but have no skill?</h1>
+    <h3>Enroll in the expert level training program<br>& start earning now</h3>
+       <a href="training.html"> <button>Enroll now</button></a></div>
+   <br><br><br><br><br><br>
+   <footer id="foot">
+     <div>
+       <ul>
+         <li><a href="">Contact Us</a></li>
+         <li><a href="">About Us</a></li>
+         <li><a href="">Terms Of Use</a></li>
+         <li><a href="">Advertising</a></li>
+         <li><a href="">Privacy Policies</a></li>
+       </ul>
+     </div>
+   </footer> 
+    <script>
+        function openLogin() {
+           forms.style.display = "block";
+            signu.style.display ="none";
+            }
+        function openSU() {
+           signu.style.display = "block";
+            forms.style.display = "none";
+            }
+        function closer(){
+            forms.style.display = "none";
+             signu.style.display ="none";
+        }
+        function open(){
+            window.replace("signupU.html");  
+        }
+        function loggedin(){
+           if(localStorage.getItem("bool")==true){
+               document.getElementById("signin").style.display="none";
+                document.getElementById("login").style.display="none";
+            }
+        }
+        function cardOpen(txt){
+            var services;
+            localStorage.setItem('services',txt);
+            location.replace("booking.html");
+        }
+        function payment(pay, num){
+            var paym;
+            localStorage.setItem('paym',pay);
+            localStorage.setItem("services",num+" Months Subscription Pack");
+            location.replace("paymwnt.html");
+        }
+           function booker(){
+            localStorage.removeItem("services");
+            location.replace("booking.html");
+        }
+    </script>
+        
+	</body>
+   
+</html>

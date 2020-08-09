@@ -1,0 +1,83 @@
+body{
+  margin: 0;
+  padding: 0;
+  background:white;
+  /*background: #487eb0;*/
+}
+.training_forms{
+  width: 400px;
+  padding: 20px;
+  text-align: center;
+  background:white;
+  /*background: #191929;*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  overflow: hidden;
+  /*box-shadow: 1px 2px 2px 2px black;*/
+  box-shadow: 0.5px 2px 3px 1px #0070ba;
+}
+.training_forms h1{
+  margin-top: 30px;
+  font-family: 'Permanent Marker', cursive;
+  color: #0070ba;
+  font-size: 45px;
+  text-shadow: 2px 2px black;
+}
+.training_forms input,.training_forms select {
+  display: block;
+  width: 100%;
+  padding: 0 16px;
+  height: 44px;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  border: 2px solid #0070ba;
+  background:none;
+  color:black;
+  font-weight: 6px;
+  margin-bottom: 10px;
+}
+
+.training_forms option{
+  display: block;
+  width: 100%;
+  padding: 0 16px;
+  height: 44px;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  border: 2px solid #0070ba;
+  background:none;
+  color:black;
+  font-weight: 6px;
+}
+.training_forms button{
+  background-color: #0070ba;
+  border-radius:30px;
+  display:block;
+  color:white;
+   width: 45%;
+   float: left;
+   height: 40px;
+   padding: 10px;
+}
+.training_forms input[type="button"]{
+  background-color: #0070ba;
+  border-radius:30px;
+  display:block;
+  color:white;
+     float: left;
+  width: 45%;
+}
+.box{
+  margin: 20px 0;
+}
+.submit-btn{
+  margin-top: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  margin-right: 20px; 
+}
+

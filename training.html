@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>~TRAINING FORM</title>
+    <link rel="stylesheet" href="t_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  </head>
+  <body>
+    <div class="training_forms" id="train_form">
+      <form>
+        <h1>BECOME A PROFESSIONAL</h1>
+        <input type="text" placeholder="Full Name" class="box">
+        <select background="none">
+		    <option name="male"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Male
+    		<option name="female">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Female
+    		<option name="others"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Others
+    		</select>
+    		<input type="text" id="age" name="age" placeholder="Age">
+    		<input type="text" name="Email Id" placeholder="Email-ID">
+    		<input type="text" name="Phone" placeholder="Contact">
+        <input list="services" placeholder="Preferred Skill">
+        <datalist id="services">
+          <option value="Plumber">
+          <option value="Carpenter" >
+          <option value="Photographer">
+          <option value="Hair & Makeup Artist">
+          <option value="Business Consultant">
+          <option value="Lawyer">
+          <option value="Counselor">
+          <option value="Interior Designer">
+          <option value="Event Manager">
+          <option value="Tourist Guide">
+          <option value="Tutor">
+        </datalist>
+        <select background="none">
+          <option name="m1">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 1 MONTH
+          <option name="m2">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 3 MONTHS
+          <option name="m3">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 6 MONTHS
+        </select>
+        <p id="para"></p>
+        </form>
+         <input type="button" value="Cancel" onclick="location.replace('xervizz_home.html')" class="submit-btn">
+        <button id="buttn" class="submit-btn" onclick="price()">Proceed</button>
+        <button id="buttn1" style="display: none;" class="submit-btn" onclick="payment()">Proceed</button>
+    </div>
+  </body>
+  <script>
+    function price(){
+      var text="The training course according to your preference costs<br>Rs. 5000/-<br>Do you want to buy this package?";
+      var para=document.getElementById('para');
+      para.innerHTML=text;
+      buttn.style.display="none";
+      buttn1.style.display="block";
+    } 
+    function payment(){
+      var paym;
+      localStorage.setItem("paym",5000);
+      localStorage.setItem("services","Training");
+      location.replace("paymwnt.html");
+    }
+  </script>
+</html>

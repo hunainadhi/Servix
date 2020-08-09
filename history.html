@@ -1,0 +1,239 @@
+<html>
+<head>
+<style>
+  div{
+    height: 45%;
+    width: 65%;	
+    margin: 25px;
+    padding:25px;
+    margin-left: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    color: #0070ba;
+    padding-bottom: 80px;
+    }
+div p{
+  text-align:center-left;
+  color: black;
+}
+tr,td{
+	text-align:center;
+}
+  .but1, .but2{
+    width:200px;
+    height:40px;
+    border-radius: 25px;
+    background-color: #0070ba;
+    margin-right: 20px;
+  }
+  .but1 a{
+    color:white;
+    text-decoration: none;
+  }
+  .but2 a{
+    color:white;
+    text-decoration: none;
+  }
+  #receipt1{
+    display:none;
+    text-align:center;
+    position: fixed;
+    z-index:10;
+    top: 15%;
+    left:27.5%;
+    background-color:white;
+    height:40%;
+    width:30%;
+    font-weight:1000px;
+  }
+    #receipt2{
+    display:none;
+    text-align:center;
+    position: fixed;
+    z-index:10;
+    top: 15%;
+    left:27.5%;
+    background-color:white;
+    height:40%;
+    width:30%;
+    font-weight:1000px;
+  }
+    #receipt3{
+    display:none;
+    text-align:center;
+    position: fixed;
+    z-index:10;
+    top: 15%;
+    left:27.5%;
+    background-color:white;
+    height:40%;
+    width:30%;
+    font-weight:1000px;
+  }
+  </style>
+  <script>
+  function showreceipt1()
+  {
+  	receipt1.style.display= "block";
+  	hist1.style.opacity= "0.3";
+    hist2.style.opacity= "0.3";
+    hist3.style.opacity= "0.3";
+  }
+  function showreceipt2()
+  {
+    receipt2.style.display= "block";
+    hist2.style.opacity= "0.3";
+    hist1.style.opacity= "0.3";
+    hist3.style.opacity= "0.3";
+  }
+  function showreceipt3()
+  {
+    receipt3.style.display= "block";
+    hist3.style.opacity= "0.3";
+    hist1.style.opacity= "0.3";
+    hist2.style.opacity= "0.3";
+  }
+  function closereceipt(){
+    receipt1.style.display= "none";
+    receipt2.style.display= "none";
+    receipt3.style.display= "none";
+    hist1.style.opacity= "1";
+    hist2.style.opacity= "1";
+    hist3.style.opacity= "1";
+	}	
+  function booknow(txt){
+    var text;
+    localStorage.setItem('services', txt);
+    location.replace("booking.html");
+  }
+  function cancelBook(){
+    alert("Are you sure?\nYou will be charged Rs. 50 on refund");
+    hist3.style.display="none";
+  }
+</script>
+</head>
+<body> 
+<div id="hist1">
+<center> <p><h1>House-hold</h1>
+<h2>Painting</h2></center></p>
+<p><span style="color: #00cc00;">Service Completed </span><br> March 30, 2019 <br> Service #670 <hr> Service-man: Maninder<br>Total: Rs.1500<p> 
+<center>
+<button class="but1" onclick="showreceipt1()"><a>View receipt</a></button>
+<button class="but1" onclick="booknow('Painting')"><a>Book Again</a></button>
+</center>
+</div>
+
+<div id="hist2">
+<center><h1>Travel</h1>
+<h2>Car Rental</h2></center></p>
+<p><span style="color: #00cc00;">Service Completed </span><br> March 10, 2019 <br> Service #669 <hr> Service-man: Amrutesh<br>Total: Rs.1220<p> 
+<center>
+<button class="but1" onclick="showreceipt2()"><a>View receipt</a></button>
+<button class="but1" onclick="booknow('Car Rental')"><a>Book Again</a></button>
+</center>
+</div>
+
+<div id="hist3">
+<center><h1>Artists</h1>
+<h2>Writer</h2></center></p>
+<p><span style="color: #f00;">Service Ongoing </span><br> February 27, 2019 - present <br> Service #609 <hr> Service-man: Ramsunder<br>Total: Rs.1000<p> 
+<center>
+<button class="but1" onclick="showreceipt3()"><a>View receipt</a></button>
+<button class="but1" onclick="booknow('Writer')"><a>Book Again</a></button>
+<button class="but1" onclick="cancelBook()"><a>Cancel</a></button>
+
+</center>
+</div>
+
+<div id="receipt1">
+<h2>Service receipt</h2>
+<hr>
+<table width="100%" align="center">
+<tr>
+<td> Painting<br>#670</td>
+<td>Rs.1045.5</td>
+
+</tr>
+<tr>
+<td colspan=2><hr></td>
+</tr>
+<tr>
+<td>Service Charge<br>Tax</td>
+<td>Rs.184.5<br>Rs.270</td>
+
+</tr>
+<tr>
+<td colspan=2><hr></td>
+</tr>
+
+<tr>
+<td>Total</td>
+<td><span style="color: #0c0;">Rs.1500</span></td> 
+</tr>
+
+</table>
+<br>
+<button onclick="closereceipt()" class="but2"><a>Close</a></button>
+</div>
+<div id="receipt2">
+<h2>Service receipt</h2>
+<hr>
+<table width="100%" align="center">
+<tr>
+<td> Car Rental<br>#669</td>
+<td>Rs.939</td>
+
+</tr>
+<tr>
+<td colspan=2><hr></td>
+</tr>
+<tr>
+<td>Service Charge<br>Tax</td>
+<td>Rs.100<br>Rs.181</td>
+
+</tr>
+<tr>
+<td colspan=2><hr></td>
+</tr>
+
+<tr>
+<td>Total</td>
+<td><span style="color: #0c0;">Rs.1220</span></td> 
+</tr>
+
+</table>
+<br>
+<button onclick="closereceipt()" class="but2"><a>Close</a></button>
+</div>
+<div id="receipt3">
+<h2>Service receipt</h2>
+<hr>
+<table width="100%" align="center">
+<tr>
+<td> Writer<br>#609</td>
+<td>Rs.760</td>
+
+</tr>
+<tr>
+<td colspan=2><hr></td>
+</tr>
+<tr>
+<td>Service Charge<br>Tax</td>
+<td>Rs.180<br>Rs.60</td>
+
+</tr>
+<tr>
+<td colspan=2><hr></td>
+</tr>
+
+<tr>
+<td>Total</td>
+<td><span style="color: #0c0;">Rs.1000</span></td> 
+</tr>
+
+</table>
+<br>
+<button onclick="closereceipt()" class="but2"><a>Close</a></button>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+
+datalist{
+    box-sizing: 100%;
+}
+#forms{
+display:none;
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  background:white;
+  position: fixed;
+ float: right;
+  transform: translate(290%,-113%);
+  overflow: hidden;
+  /*box-shadow: 1px 2px 2px 2px black;*/
+  box-shadow: 1px 2px 3px 1px #0070ba;
+  z-index: 20;
+}
+#forms h1{
+  margin-top: 70px;
+  font-family: 'Permanent Marker', cursive;
+  color: #0070ba;
+  font-size: 50px;
+  text-shadow: 2px 2px black;
+}
+#forms input{
+  display: block;
+  width: 100%;
+  padding: 0 16px;
+  height: 44px;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  border: 2px solid #0070ba;
+  background:none;
+  color:black;
+  font-weight: 6px;
+}
+
+#form textarea{
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  height: 44px;
+  text-align: center;
+  
+  font-family: sans-serif;
+  border: 2px solid #0070ba;
+  background:none;
+  color:black;
+  font-weight: 6px;
+}
+#forms input[type="submit"]{
+  background-color: #0070ba;
+  border-radius:30px;
+  display:block;
+    color: white;
+}
+.box{
+  margin: 20px 0;
+}
+.submit-btn{
+  margin-top: 60px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+#forms a{
+  text-decoration: none;
+  color: #487eb0;
+  font-family: "montserrat",sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  display: block;
+}
+
+input{
+  align-content: center;
+    display: block;
+  width: 60%;
+  padding: 0 16px;
+  height: 44px;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  border: 2px solid #0070ba;
+  background:none;
+  color:black;
+  font-weight: 6px;
+}
+
